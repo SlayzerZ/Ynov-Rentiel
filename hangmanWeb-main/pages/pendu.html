@@ -1,0 +1,76 @@
+{{define "pendu"}}
+
+<body>
+    <div class="containerPendu" style="color: white;">
+        <!-- Header -->
+        <div class="headerHangman">
+            <div class="firstSectionHeader"></div>
+            <div class="secondSectionHeader">
+                {{if gt .Hangmanposition 2}}
+                    <div class="drawTopBase"></div>
+                {{end}}
+            </div>
+        </div>
+    
+        <!-- Container -->
+        <div class="containerHangman">
+            <div class="firstSectionContainer">
+                {{if gt .Hangmanposition 1}}
+                    <div class="drawtrunk"></div>
+                {{end}}
+            </div>
+            <div class="secondSectionContainer">
+                <div class="secondSectionContainer_one">
+                    <div class="sectionBarHead">
+                        {{if gt .Hangmanposition 3}}
+                            <div class="drawRope"></div>
+                        {{end}}
+                    </div>
+                    <div class="sectionHead">
+                        {{if gt .Hangmanposition 4}}
+                            <div class="drawHead"></div>
+                        {{end}}
+                    </div>
+                    <div class="sectionBody">
+                      
+                        
+                        <div class="sectionLeftArm">
+                            {{if gt .Hangmanposition 6}}
+                                <div class="drawLeftArm"></div>
+                            {{end}}
+                        </div>
+
+                        {{if gt .Hangmanposition 5}}
+                            <div class="sectionAbs"><div class="drawAbs"></div></div>
+                        {{end}}
+                        
+                        {{if gt .Hangmanposition 7}}
+                            <div class="sectionRightArm"><div class="drawRightArm"></div></div>
+                        {{end}}
+                    </div>
+                    <div class="sectionFoot">
+                        {{if gt .Hangmanposition 8}}
+                            <div class="sectionLeftFoot"><div class="drawLeftFoot"></div></div>
+                        {{end}}
+
+                        <div class="sectionRightFoot">
+                            {{if gt .Hangmanposition 9}}
+                                <div class="drawRightFoot"></div>
+                            {{end}}
+                        </div>
+                    </div>
+                </div>
+                <div class="secondSectionContainer_two"></div>
+            </div>
+        </div>
+    
+        <!-- Footer -->
+        <div class="footerHangman">
+            {{if gt .Hangmanposition 0}}
+                <div class="drawBase"></div>
+            {{end}}
+        </div>
+    </div>
+</body>
+
+{{end}}

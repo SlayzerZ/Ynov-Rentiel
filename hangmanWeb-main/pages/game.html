@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./../static/style.css">
+    <link rel="stylesheet" href="pendu.html">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Game</title>
+</head>
+<body>
+    <!-- NavBar -->
+    <div class="navbar">
+        <a href="/login"><div class="navbarButton1"><i class="fa-solid fa-house-flag icon"></i></div></a>
+        <a href="/stats"><div class="navbarButton3"><i class="fa-solid fa-trophy icon"></i></div></a>
+        <a href="/stats"><div class="navbarButton2"><i class="fa-solid fa-chart-simple icon"></i></div></a>
+        <a href="/game"><div class="navbarButton3 focus"><i class="fa-solid fa-gamepad icon"></i></div></a>
+    </div>
+
+    <!-- Header -->
+    <div class="headerBackground">
+        <div class="headerTitle">HANGMAN WEB</div>
+    </div>
+
+    <div class="containerGame">
+        <!-- Word Find -->
+        <div class="wordFindArea">
+            <div class="wordFind">{{.WordtoFind}}</div>
+        </div>
+
+        <div class="hangmanDrawContainer">
+            <!-- Templates HangMan-->
+            <div class="hangmanArea">
+                {{template "pendu" .}}
+            </div>
+
+            <!-- Attempt -->
+            <div class="attemptArea">
+                <div class="titleAtempt">Attempt</div>
+                <div class="attemptNumberArea"><div class="attemptNumber">{{.Attempt}}/10</div></div>
+                <div class="allWordUsedContainer">
+                    <div class="allWordTitle">Letter Used</div>
+                    <div class="allWordUsedArea">
+                        <div class="allWordUsed">{{.Allletter}}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Input Word -->
+        <div class="inputWordArea">
+            <form action="/game" method="POST" class="formInput">
+                <input type="text" name="letterclick" id="" class="inputWord" placeholder="> Type Letter" autofocus="true">
+            </form>
+        </div>
+    </div>
+</body>
+</html>

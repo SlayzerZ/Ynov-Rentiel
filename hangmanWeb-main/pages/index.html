@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Document</title>
+</head>
+<body>
+    <!-- NavBar -->
+    <div class="navbar">
+        <div class="navbarButton1 focus"><i class="fa-solid fa-house-flag icon"></i></div>
+        <div class="navbarButton3"><i class="fa-solid fa-trophy icon"></i></div>
+        <div class="navbarButton2"><i class="fa-solid fa-chart-simple icon"></i></div>
+        <div class="navbarButton3"><i class="fa-solid fa-gamepad icon"></i></div>
+    </div>
+
+    <!-- Header -->
+    <div class="headerBackground">
+        <div class="headerTitle">HANGMAN WEB</div>
+    </div>
+
+    <div class="container">
+        <div class="loginRegisterContainer">
+            <!-- Image -->
+            <div class="imageArea">
+                <div class="image">
+                    <img src="https://cdn3.iconfinder.com/data/icons/essential-rounded/64/Rounded-31-512.png" class="image">
+                </div>
+            </div>
+
+            <!-- Logo / Register -->
+            <div class="login-RegisterNavBarArea">
+                <!-- Login Area -->
+                <div class="loginArea">
+                    <div class="loginNavBarTitle" id="loginButton">LOGIN</div>
+                    <div class="lineBarLogin" id="lineBarLogin"></div>
+                </div>
+
+                <!-- Register Area -->
+                <button class="registerArea">
+                    <div class="hiddenRegister"></div>
+                    <div class="registerNavBarTitle" id="signupButton">SIGN UP</div>
+                    <div class="lineBarRegister" id="lineBarRegister"></div>
+                </button>
+            </div>
+
+            <!-- Login Container -->
+            <div class="loginContainer" id="loginContainer">
+                <div class="loginBackground">
+                    <form action="/login" method="post">
+                    <!-- USERNAME -->
+                    <div class="textTitleInput">USERNAME*</div>
+                    <div class="input-center">
+                        <input type="text" name="username" id="" class="input">
+                    </div>
+
+                    <!-- PASSWORD -->
+                    <div class="textTitleInput">PASSWORD*</div>
+                    <div class="input-center">
+                        <input type="text" name="password" id="" class="input">
+                    </div>
+
+                    <!-- PASSWORD -->
+                    <div class="input-center submitButtonArea">
+                        <div class="submitButton">SUBMIT
+                            <input type="submit" value="Login">
+                        </div>
+                    </div>
+                </form>
+                </div>
+            </div>
+
+            <!-- Register Container -->
+            <div class="registerContainer" id="registerContainer">
+                <div class="loginBackground">
+
+                    <!-- USERNAME -->
+                    <div class="textTitleInput">EMAIL*</div>
+                    <div class="input-center">
+                        <input type="text" name="" id="" class="input">
+                    </div>
+
+                    <!-- PASSWORD -->
+                    <div class="textTitleInput">USERNAME*</div>
+                    <div class="input-center">
+                        <input type="text" name="" id="" class="input">
+                    </div>
+
+                    <!-- PASSWORD -->
+                    <div class="textTitleInput">PASSWORD*</div>
+                    <div class="input-center">
+                        <input type="text" name="" id="" class="input">
+                    </div>
+
+                    <!-- PASSWORD -->
+                    <div class="textTitleInput">RETYPE PASSWORD*</div>
+                    <div class="input-center">
+                        <input type="text" name="" id="" class="input">
+                    </div>
+
+                    <!-- PASSWORD -->
+                    <div class="input-center submitButtonArea">
+                        <div class="submitButton">SUBMIT</div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>

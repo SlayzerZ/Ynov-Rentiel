@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./../static/style.css">
+    <link rel="stylesheet" href="statsPlayer.html">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/charts.css/dist/charts.min.css">
+    <title>Sign Up</title>
+</head>
+<body>
+    <!-- NavBar -->
+    <div class="navbar">
+        <a href="/login"><div class="navbarButton1"><i class="fa-solid fa-house-flag icon"></i></div></a>
+        <a href="/stats"><div class="navbarButton3"><i class="fa-solid fa-trophy icon"></i></div></a>
+        <a href="/stats"><div class="navbarButton2 focus"><i class="fa-solid fa-chart-simple icon"></i></div></a>
+        <a href="/game"><div class="navbarButton3"><i class="fa-solid fa-gamepad icon"></i></div></a>
+    </div>
+
+    <!-- Header -->
+    <div class="headerBackground">
+        <div class="headerTitle">HANGMAN WEB</div>
+    </div>
+
+    <div class="container">
+        <!-- Part 1 -->
+        <div class="statsPart1Area">
+            <div class="statsPart1">
+                <div class="statsTitle">Player Stats</div>
+
+                <div style="width: 80%; margin-left: 10%;">
+                    <div class="secondTitleStats">Id : {{.Id}}</div>
+                </div>
+
+                <br><br>
+                <div style="width: 80%; margin-left: 10%;">
+                    {{template "statsplayer" .}}
+                </div>
+            </div>
+        </div>
+
+        <!-- Part 2 -->
+        <div class="statsPart2Area">
+            <div class="statsPart2">
+
+                <!-- Part 2.Part 1 : Player -->
+                <div class="playerStatsAreaPart2">
+                    <div class="statsTitle" style="color: white">Player %</div>
+                    <!-- Graph 1: PLayer -->
+                    <div class="areaGraphPlayer">
+                        <table class="charts-css column show-labels" id="my-chart">
+                            <tbody>
+                                <tr>
+                                    <!-- Size Graph Gestion: https://chartscss.org/components/datasets/ -->
+                                    <th scope="row" style="color: white; font-weight: normal;"> Win </th>
+                                    <td style="--start: 0.2; --size: calc( {{.VictoryNumber}} / 10 );; background-color: rgba(72, 228, 24, 0.795);"> <span class="data"> {{.VictoryNumber}} </span> </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row" style="color: white; font-weight: normal;"> Lose </th>
+                                    <td style="--start: 0.2; --size: calc( {{.LoseNumber}} / 10 ); background-color: rgba(234, 16, 16, 0.795);"> <span class="data"> {{.LoseNumber}} </span> </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Part 2.Part 2 : Top 10 -->
+                <div class="top10PLayerAreaPart2">
+                    <div class="top10Area">
+                        <!-- Top 10 Graph -->
+                        <table class="charts-css bar multiple data-spacing-20">
+                            <caption> LeaderBoard Top 10 </caption>
+                              <tr>
+                                <!-- Top 1 -->
+                                <td style="--size: calc( 46 / 50 ); background-color: orange;">
+                                  <span class="data"> Thomas 🥇 </span>
+                                  <span class="tooltip"> 46 Win / 22 Lose </span>
+                                </td>
+                                <!-- Top 2 -->
+                                <td style="--size: calc( 37 / 50 ); background-color: rgb(127, 140, 145);">
+                                  <span class="data"> Toto1 🥈 </span>
+                                  <span class="tooltip"> 46 Win / 22 Lose </span>
+                                </td>
+                                <!-- Top 3 -->
+                                <td style="--size: calc( 34 / 50 ); background-color: rgb(143, 97, 40);">
+                                  <span class="data"> Edouardo 🥉 </span>
+                                  <span class="tooltip"> 46 Win / 22 Lose </span>
+                                </td>
+                                <!-- Top 4 -->
+                                <td style="--size: calc( 30 / 50 ); background-color: #124682;">
+                                    <span class="data"> Manu </span>
+                                    <span class="tooltip"> 46 Win / 22 Lose </span>
+                                </td>
+                                <!-- Top 5 -->
+                                <td style="--size: calc( 21 / 50 ); background-color: #0e3c71;">
+                                    <span class="data"> Ferrari </span>
+                                    <span class="tooltip"> 46 Win / 22 Lose </span>
+                                </td>
+                                <!-- Top 6 -->
+                                <td style="--size: calc( 20 / 50 ); background-color: #124682;">
+                                    <span class="data"> Apple </span>
+                                    <span class="tooltip"> 46 Win / 22 Lose </span>
+                                </td>
+                                <!-- Top 7 -->
+                                <td style="--size: calc( 17 / 50 ); background-color: #0e3c71;">
+                                    <span class="data"> Alpha </span>
+                                    <span class="tooltip"> 46 Win / 22 Lose </span>
+                                </td>
+                                <!-- Top 8 -->
+                                <td style="--size: calc( 14 / 50 ); background-color: #124682;">
+                                    <span class="data"> Chad </span>
+                                    <span class="tooltip"> 46 Win / 22 Lose </span>
+                                </td>
+                                <!-- Top 9 -->
+                                <td style="--size: calc( 11 / 50 ); background-color: #0e3c71;">
+                                    <span class="data"> Hp </span>
+                                    <span class="tooltip"> 46 Win / 22 Lose </span>
+                                </td>
+                                <!-- Top 10 -->
+                                <td style="--size: calc( 8 / 50 ); background-color: #124682;">
+                                    <span class="data"> Dix </span>
+                                    <span class="tooltip"> 46 Win / 22 Lose </span>
+                                </td>
+                              </tr>
+                          </table>
+                    </div>
+                </div>
+
+                <!-- Part 2.Part 3 : World Stats -->
+                <div class="worldStatsAreaPart2">
+                    <div class="statsTitle" style="color: white">World %</div>
+                    <div class="areaGraphPlayer">
+                        <table class="charts-css column show-labels" id="my-chart">
+                            <tbody>
+                                <tr>
+                                    <th scope="row" style="color: white; font-weight: normal;"> Win </th>
+                                    <td style="--start: 0.2; --size: calc( {{.WorldWin}} / 10 ); background-color: rgba(72, 228, 24, 0.795);"> <span class="data"> {{.WorldWin}} </span> </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row" style="color: white; font-weight: normal;"> Lose </th>
+                                    <td style="--start: 0.4; --size: calc( {{.WorldLose}} / 10 ); background-color: rgba(234, 16, 16, 0.795);"> <span class="data"> {{.WorldLose}} </span> </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>
