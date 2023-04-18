@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Sortable</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <link id="fav" rel="shortcut icon" type="image/x-icon" href="data:image/x-icon;,">
+  <link rel="stylesheet" type="text/css" href="./sortable.css">
+</head>
+<body>
+  <label for="element-select">Select:</label>
+  <select name="Element" id="Element-select">
+      <option value="10">10</option>
+      <option value="20" selected>20</option>
+      <option value="50">50</option>
+      <option value="100">100</option>
+      <option value="563">All Results</option>
+  </select>
+  <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names.." title="Type in a name">
+
+    <table id="ComicsTable">
+        <thead>
+          <tr class="title"><td colspan="10"><h2>Comics-Table</h2></td></tr>
+          <tr>
+            <th data-sort="test">Icon</th>
+            <th data-sort="name" id="namee">Name</th>
+            <th data-sort="fullname">Full name</th>
+            <th data-sort="powerstats">Powerstats</th>
+            <th data-sort="race">Race</th>
+            <th data-sort="gender">Gender</th>
+            <th data-sort="height">Height</th>
+            <th data-sort="weight">Weight</th>
+            <th data-sort="placeofbirth">Place of Birth</th>
+            <th data-sort="alignment">Alignment</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td colspan="4"><i>Loading...</i></td></tr>
+        </tbody>
+      </table>
+      <button id="prev">Previous</button> 
+      <button id="next">Next</button> 
+      <script type="module" src="index.js"></script>
+      <script>
+function myFunction() {
+  var input, filter, table, tr, td, i, txtValue;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("ComicsTable");
+  tr = table.getElementsByTagName("tr");
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[1];
+    if (td) {
+      txtValue = td.textContent || td.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }       
+  }
+}
+</script>
+</body>
+</html>
