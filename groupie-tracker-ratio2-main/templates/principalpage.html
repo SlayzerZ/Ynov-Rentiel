@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang ="en">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="../static/principalpage.css">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" type="image/x-icon" href="../assets/pictures/favicon.ico">
+        <title>Citrus</title>
+    </head>
+    <body>
+      <div class="all">
+        <header class="main-head">
+            <nav>
+                <div class="left">
+                    <img src="../assets/pictures/logo.png" class="logomini">
+                    <p class="title">
+                        Accueil
+                    </p>
+                </div>
+                <ul>
+                    <li><a href= "/main2">Accueil</a></li>
+                    <li><a href= "/profil">Profil</a></li>
+                    <li><a href= "/map">Map</a></li>
+                    <li><a href= "/disconnect">Déconnexion</a></li>
+                    <li><a href= "/about">A propos</a></li>
+                </ul>
+            </nav>
+    </header>
+    <form id="search-bar & button" action="/main" class="forms" method="GET" role="search">  
+      <div class="header">  
+        <div class="emplacement">
+          <div class="searchbar">
+            <div class="input-group-append">
+              <button class="btn" type="button"> <img src="../assets/pictures/skip-end-circle.svg" div class="search" ></i></button>
+            </div>
+              <input list="Search" id="artiste" name="Artiste" class="input-text">
+                <datalist id="Search">
+                  {{range .}}
+                  <option value="{{.Name}}">
+                  {{end}}
+                </datalist>
+              </input>
+          </div>
+        </div>
+      </div>
+      <div class="filter">
+        <fieldset class="za">
+            <legend>Retrouvez-vous...</legend>
+            <div>
+              <label for="filter">Désactiver la recherche filtrée:</label>
+              <input type="radio" id="filter" name="filter" value="Nothing" checked>
+            </div>
+            <div>
+              <label for="filter">Début de Carrière:</label>
+              <input type="radio" id="filter" name="filter" value="Carrer">
+            </div>
+            <div class="test">
+            <input type="range" list="tickmarks" min="1950" max="2013" id="tick" name="tick" oninput="tickoutput.value = tick.value">
+                <datalist id="tickmarks">
+                    <label option value="1960">1960</label>
+                    <label option value="1970">1970</label>
+                    <label option value="1980">1980</label>
+                    <label option value="1990">1990</label>
+                    <label option value="2000">2000</label>
+                    <label option value="2010">2010</label>
+                </datalist>
+                <output id="tickoutput"></output>
+            </div>
+            <div>
+              <label for="filter">Premier album:</label>
+              <input type="radio" id="filter" name="filter" value="Album">
+            </div>
+            <div class="test">
+                <input type="range" list="tickmarks2" min="1950" max="2018" id="tick2" name="tick2" oninput="tickoutput2.value = tick2.value">
+                    <datalist id="tickmarks2" class="test">
+                        <option value="1960"></option>
+                        <option value="1970"></option>
+                        <option value="1980"></option>
+                        <option value="1990"></option>
+                        <option value="2000"></option>
+                        <option value="2010"></option>
+                    </datalist>
+                    <output id="tickoutput2"></output>
+            </div>
+                <label>Taille du groupe:</label>
+                <input type="radio" id="filter" name="filter" value="Member">
+                <div class="member">
+                    <div>
+                        <input type="radio" class="checkradio" id="scales" name="scales" value="1" checked>
+                        <label for="scales">1</label>
+                    </div>
+                    <div>
+                        <input type="radio" class="checkradio" id="scales" name="scales" value="2" checked>
+                        <label for="scales">2</label>
+                    </div>
+                    <div>
+                        <input type="radio" class="checkradio" id="scales" name="scales" value="3" checked>
+                        <label for="scales">3</label>
+                    </div>
+                    <div>
+                        <input type="radio" class="checkradio" id="scales" name="scales" value="4" checked>
+                        <label for="scales">4</label>
+                    </div>
+                    <div>
+                        <input type="radio" class="checkradio" id="scales" name="scales" value="5" checked>
+                        <label for="scales">5</label>
+                    </div>
+                    <div>
+                        <input type="radio" class="checkradio" id="scales" name="scales" value="6" checked>
+                        <label for="scales">6</label>
+                    </div>
+                    <div>
+                        <input type="radio" class="checkradio" id="scales" name="scales" value="7+" checked>
+                        <label for="scales">7+</label>
+                    </div>
+                </div>
+            <div class="submit-button">
+                <span id="Answer">
+                    <input id="Answer-button" type="submit" class="input" value="Search">
+                </span>
+            </div>
+        </fieldset>
+    </div>
+    </form> 
+      <div class = "Artist">
+          {{range .}}
+          <fieldset>
+            <a href = /artist?id={{.Id}}>
+            <img src ={{.Image}} class="Icon"/>
+            <p class = "name">{{.Name}}</p>
+            </a>
+          </fieldset>
+          {{end}}   
+      </div>
+</div>
+  </body>
+</html>

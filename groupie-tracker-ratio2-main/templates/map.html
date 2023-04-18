@@ -1,0 +1,83 @@
+<html>
+<head>
+<title>A Leaflet map!</title>
+<link rel="stylesheet" href="../static/map.css">
+<meta charset="UTF-8">
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"></script>
+
+</head>
+
+<body>
+  <div id="map"></div>
+  
+<script>
+
+  //Appel et configuration carte
+  
+var map = L.map('map', {
+                 center: [45, 40],
+                 zoom: 2 });
+   
+  // Fonds de carte
+  
+var baselayers = {
+     OSM: L.tileLayer('http://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png'),
+     ESRI: L.tileLayer('http://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}')}
+;baselayers.ESRI.addTo(map);
+  
+  // Ajout marqueurs 
+  var pos = new L.LayerGroup();
+	L.marker([-45.8740984, 170.5035755]).bindPopup('<b>Queen </b>').addTo(map)
+	L.marker([20.6308643, -87.0779503]).bindPopup('<b>SOJA </b>').addTo(map)
+    L.marker([51.5073359, -0.12765]).bindPopup('<b>Pink Floyd </b>').addTo(map)
+	L.marker([-36.852095, 174.7631803]).bindPopup('<b>Scorpions </b>').addTo(map)
+    L.marker([36.7014631, -118.755997]).bindPopup('<b>XXXTentacion / Mac Miller / Joyner Lucas / Thirty Seconds to Mars / Linkin Park</b>').addTo(map)
+	L.marker([43.2630018, -2.9350039]).bindPopup('<b>Kendrick Lamar </b>').addTo(map)
+    L.marker([38.7077507, -9.1365919]).bindPopup('<b>Kendrick Lamar /Foo Fighters </b>').addTo(map)
+	L.marker([51.2254018, 6.7763137]).bindPopup('<b>ACDC </b>').addTo(map)
+    L.marker([50.9701533, 4.6933645]).bindPopup('<b>Pearl Jam</b>').addTo(map)
+	L.marker([25.2856329, 51.5264162]).bindPopup('<b>Katy Perry </b>').addTo(map)
+    L.marker([24.4538352, 54.3774014]).bindPopup('<b>Rihanna / Eminem </b>').addTo(map)
+	L.marker([51.5428858, 0.6859213]).bindPopup('<b>Genesis </b>').addTo(map)
+    L.marker([39.5158825, -116.8537227]).bindPopup('<b>Phil Collins </b>').addTo(map)
+	L.marker([51.5073359, -0.12765]).bindPopup('<b>Led Zeppelin / Fall Out Boy / Eagles / Coldplay</b>').addTo(map)
+    L.marker([52.5170365, 13.3888599]).bindPopup('<b>The Jimi Hendrix Experience </b>').addTo(map)
+	L.marker([27.7567667, -81.4639835]).bindPopup('<b>Bee Gees / The Rolling Stones </b>').addTo(map)
+    L.marker([46.2311749, 7.3588795]).bindPopup('<b>Deep Purple </b>').addTo(map)
+	L.marker([53.4794892, -2.2451148]).bindPopup('<b>Aerosmith </b>').addTo(map)
+    L.marker([41.6521342, -0.8809428]).bindPopup('<b>Dire Straits </b>').addTo(map)
+    L.marker([-22.9110137, -43.2093727]).bindPopup('<b>Mamonas Assassinas </b>').addTo(map)
+    L.marker([24.6942229, 46.6794301]).bindPopup('<b>Imagine Dragons </b>').addTo(map)
+    L.marker([-37.808747, 144.9238207]).bindPopup('<b>Juice Wrld / Logic </b>').addTo(map)
+    L.marker([40.4167047, -3.7035825]).bindPopup('<b>Alec Benjamin </b>').addTo(map)
+    L.marker([38.7251776, -105.607716]).bindPopup('<b>Bobby McFerrins / R3HAB / The Chainsmokers </b>').addTo(map)
+    L.marker([34.0007493, -81.0343313]).bindPopup('<b>Post Malone </b>').addTo(map)
+    L.marker([39.9527237, -75.1635262]).bindPopup('<b>Travis Scott / Mobb Deep  </b>').addTo(map)
+    L.marker([36.1672559, -115.148516]).bindPopup('<b>J. Cole </b>').addTo(map)
+    L.marker([47.3744489, 8.5410422]).bindPopup('<b>Nickelback </b>').addTo(map)
+    L.marker([35.2272086, -80.8430827]).bindPopup('<b>Guns N Roses </b>').addTo(map)
+    L.marker([40.6526006, -73.9497211]).bindPopup('<b>NWA </b>').addTo(map)
+    L.marker([19.0785451, 72.878176]).bindPopup('<b>U2 </b>').addTo(map)
+    L.marker([4.6534649, -74.0836453]).bindPopup('<b>Arctic Monkeys </b>').addTo(map)
+    L.marker([19.4326296, -99.1331785]).bindPopup('<b>Gorillaz </b>').addTo(map)
+    L.marker([52.5362325, 13.5688425]).bindPopup('<b>Red Hot Chili Peppers</b>').addTo(map)
+    L.marker([37.5666791, 126.9782914]).bindPopup('<b>Green Day</b>').addTo(map)
+    L.marker([-19.9225776, -43.9451356]).bindPopup('<b>Metallica </b>').addTo(map)
+    L.marker([-10.3333333, -53.2]).bindPopup('<b>Maroon 5 </b>').addTo(map)
+    L.marker([50.291048, 2.7772211]).bindPopup('<b>Twenty One Pilots </b>').addTo(map)
+    L.marker([-12.0621065, -77.0365256]).bindPopup('<b>Muse </b>').addTo(map)
+
+  // Selecteur des marqueurs
+  
+ L.control.layers(baselayers, marqueurs, {position: 'topright', collapsed: false, autoZIndex: true}).addTo(map);
+  
+  // Echelle cartographique
+  
+L.control.scale().addTo(map);
+
+  </script>
+   
+</body>
+</html>

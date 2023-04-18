@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../static/login.css">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="../assets/pictures/favicon.ico">
+    <title>Citrus</title>
+</head>
+<body>
+    <div class="main">
+        <div class="first">
+            <div class="bottom">
+                <img src="../assets/pictures/logo.png" class="logomini">
+                <p class="title">
+                    Connexion
+                </p>
+            </div>
+            <div class="top">
+                <form class="forms" action="/login" method="post">
+                    <div class="id">
+                        <label for="username">Nom d'utilisateur</label>
+                        <input type="text" id = "username" name="username" placeholder="Entrez votre nom d'utilisateur" required class="input">
+                    </div>
+                    <div class="mdp">
+                        <label for="password">Mot de passe</label>
+                        <input type="password" id = "Mot de passe" name="password" required class="input">  
+                    </div>
+                    {{if .ErrorL}}
+                    {{template "errorMsg"}}
+                    {{end}}
+                        <div class="button">
+                            <button class="buttons"><p>Connexion</p></button>
+                        </div>
+                </form>
+                <a href="/register">
+                    <button class="forgotten" type="text"><p>Première connexion ? Cliquez <u style="text-decoration: underline;">ici</u>.</p></button>  
+                </a>
+            </div>
+        </div>
+        <div class = "second">
+            <img src="../assets/pictures/logocomplet.png" class="logo">
+        </div>
+    </div>
+</body>
+</html>

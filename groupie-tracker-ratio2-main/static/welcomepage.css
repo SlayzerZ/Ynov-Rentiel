@@ -1,0 +1,103 @@
+:root{
+    --bleu_vert: #14C1BD;
+    --bleu_ciel: #E6FFFE;
+    --vert: #07541A;
+    --blanc :#FFFFFF;
+
+}
+
+* {
+    padding: 0px;
+    margin: 0px;
+}
+
+@font-face {
+    font-family: "Bukhari Script";
+    src: url("../assets/fonts/Bukhari\ Script.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Belleza-Regular";
+    src: url("../assets/fonts/Belleza-Regular.ttf") format("truetype");
+}
+
+.main {
+    height: 100vh;
+    background: rgb(20,193,189);
+    background: linear-gradient(51deg, rgba(20,193,189,1) 0%, rgba(255,255,255,1) 80%);
+    display: flex;
+    justify-content: space-around;
+}
+
+.first{
+    width: 50vh;
+    display: flex;
+    flex-direction: column;
+    margin-top: 25vh;
+}
+
+.second{
+    width: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.title{
+    font-family: "Bukhari Script";
+    color: #07541A;
+    font-size: 45px;
+    padding-bottom: 5vh;
+}
+
+.subtitle{
+    font-family: "Belleza-Regular";
+    color: #07541A;
+    font-size: 25px;
+}
+
+.start {
+    border: 1px solid var(--contour);
+    background: transparent 0% 0% no-repeat padding-box;
+    border: 1px solid #07541A;
+    border-radius: 18px;
+    height: 60px;
+    opacity: 1;
+    padding-left: 15px;
+    padding-right: 15px;
+    display: flex;
+    margin-bottom: 15px;
+    justify-content: center;
+    align-items: center;
+}
+
+.button p{
+    font-family: "Bukhari Script";
+    color: #07541A;
+    font-size: 30px;
+}
+
+.logo {
+    width : 60vh;
+    height : 60vh;
+    max-width : 100vh;
+    max-height : 100vh;
+}
+
+.text{
+    display: flex;
+    justify-content: flex-start;
+}
+
+.button{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-top: 15vh;
+}
+.button{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-top: 15vh;
+}

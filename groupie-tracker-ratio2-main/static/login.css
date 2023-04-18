@@ -1,0 +1,168 @@
+:root{
+    --bleu_vert: #14C1BD;
+    --bleu_ciel: #E6FFFE;
+    --vert: #07541A;
+    --blanc :#FFFFFF;
+}
+
+* {
+    padding: 0px;
+    margin: 0px;
+}
+
+@font-face {
+    font-family: "Bukhari Script";
+    src: url("../assets/fonts/Bukhari\ Script.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Belleza-Regular";
+    src: url("../assets/fonts/Belleza-Regular.ttf") format("truetype");
+}
+
+.main {
+    background: rgb(20,193,189);
+    background: linear-gradient(51deg, rgba(20,193,189,1) 0%, rgba(255,255,255,1) 80%);
+    display: flex;
+    flex-direction: row;
+    max-height: 100vh;
+    justify-content: space-around;
+}
+
+.first{
+    max-height: 100vh;
+    width: 50vh;
+    display: flex;
+    flex-direction: column;
+    margin-top: 5vh;
+}
+
+.second{
+    height: 100vh;
+    width: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.title{
+    font-family: "Bukhari Script";
+    color: #07541A;
+    font-size: 75px;
+    padding-bottom: 5vh;
+}
+
+.logomini{
+    width: 150px;
+}
+
+.buttons p{
+    font-family: "Bukhari Script";
+    color: #07541A;
+    font-size: 25px;
+}
+
+.logo {
+    width : 60vh;
+    height : 60vh;
+    max-width : 100vh;
+    max-height : 100vh;
+}
+
+.bottom{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    margin-bottom: 1rem;
+}
+
+.button{
+    margin-top: 125px;
+}
+
+.buttons{
+    border: 1px solid var(--contour);
+    background: transparent 0% 0% no-repeat padding-box;
+    border: 1px solid #07541A;
+    border-radius: 18px;
+    height: 60px;
+    opacity: 1;
+    padding-left: 15px;
+    padding-right: 15px;
+    display: flex;
+    margin-bottom: 15px;
+    justify-content: center;
+    align-items: center;
+    margin-left: 125px;
+}
+
+.buttons:hover {
+    transform: scale(0.96);
+    cursor: pointer;
+}
+
+.forgotten{
+    background: transparent 0% 0% no-repeat padding-box;
+    border: 1px solid transparent;
+    height: 30px;
+    opacity: 1;
+    padding-left: 15px;
+    padding-right: 15px;
+    display: flex;
+    margin-bottom: 15px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 75px;
+    margin-left: 50px;
+}
+
+.forgotten p{
+    font-family: "Belleza-Regular";
+    color: #07541A;
+    font-size: 20px;
+}
+
+.bottom{
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 1rem;
+} 
+
+.forms{
+    display: flex;
+    flex-direction: column;
+    margin-top: 75px;
+}
+
+.forms label {
+    margin-bottom: 10px;
+    margin-top: 1rem;
+    font-family: "Belleza-Regular";
+    color: #07541A;
+    font-size: 25px;
+    font-weight: 150;
+}
+
+.input {
+    border: 1px solid var(--contour);
+    background: transparent 0% 0% no-repeat padding-box;
+    border: 1px solid #07541A;
+    border-radius: 18px;
+    width: 275px;
+    height: 40px;
+    opacity: 1;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-top: 30px;
+    margin-left: 50px;
+}
+
+.id{
+    display: flex;
+    flex-direction: row;
+}
+
+.mdp{
+    display: flex;
+    flex-direction: row;
+}

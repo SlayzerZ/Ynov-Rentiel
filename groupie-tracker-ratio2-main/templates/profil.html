@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="../static/profil.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profil</title>
+</head>
+<body>
+    <div class="all">
+    <header class="main-head">
+        <nav>
+            <div class="left">
+                <img src="../assets/pictures/logo.png" class="logomini">
+                <p class="title">
+                    Profil
+                </p>
+            </div>
+            <ul>
+                <li><a href= "/main2">Accueil</a></li>
+                <li><a href= "/profil">Profil</a></li>
+                <li><a href= "/map">Map</a></li>
+                <li><a href= "/disconnect">Déconnexion</a></li>
+                <li><a href= "/about">A propos</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="main"> 
+        <div class="card p-4"> 
+            <div class=" image"> 
+                <button class="btn btn-secondary"> 
+                    {{template "pimg" .}}
+                </button> 
+            </div> 
+        </div>
+        <div class="bottom">
+            <form class="forms">
+                <label for="username">Identifiant: {{.IdS}}</label>
+                <label for="username">Pseudonyme: {{.Username}}</label>
+                <label for="phone">Numéro de Téléphone: {{.Cellphone}}</label>
+            </form>
+        </div>
+    </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../static/register.css">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="../assets/pictures/favicon.ico">
+    <title>Citrus</title>
+</head>
+<body>
+    <div class="main">
+        <div class="first">
+            <div class="bottom">
+                <img src="../assets/pictures/logo.png" class="logomini">
+                <p class="title">
+                    Authentification
+                </p>
+            </div>
+            <div class="top">
+                <form class="forms" action="/register" method="post">
+                    <div class="id">
+                        <label for="username">Nom d'utilisateur</label>
+                        <input type="text" id = "username" name = "username" placeholder="Entrez votre nom d'utilisateur" required class="input">
+                    </div>
+                    <div class="phone">
+                        <label for="phone">Téléphone</label>
+                        <input type="tel" id = "Mot de passe" name = "cellphone" required class="input">  
+                    </div>
+                    <div class="mdp">
+                        <label for="password">Mot de passe</label>
+                        <input type="password" id = "Mot de passe" name = "password" required class="input">  
+                    </div>
+                    <div class="mdpforsure">
+                        <label for="password">Confirmer le mot de passe</label>
+                        <input type="password" id = "Mot de passe" name = "passwordretype" required class="input">  
+                    </div>
+                    {{if .ErrorS}}
+                    {{template "errorMsg2"}}
+                    {{end}}
+                        <div class="button">
+                            <button class="login"><p>Création</p></button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class = "second">
+            <img src="../assets/pictures/logocomplet.png" class="logo">
+        </div>
+    </div>
+</body>
+</html>
