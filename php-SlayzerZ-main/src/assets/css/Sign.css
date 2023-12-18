@@ -1,0 +1,37 @@
+.Container{
+    display: flex;
+    justify-content: space-around;
+    align-content: center;
+    margin-top: 5%;
+}
+.field{
+    margin-bottom: 10%;
+}
+.But{
+    /* text-align: center; */
+}
+.Connexion{
+    /* margin-left: 10%; */
+    text-align: center;
+    display: block;
+    min-width: 15%;
+    background-color: #f7daea;
+}
+.Inscription{
+    text-align: center;
+    display: block;
+    min-width: 15%;
+    background-color: #f7daea;
+}
+button{
+    /* color: white; */
+    background-color: #c9ee00;
+}
+button:hover{
+    color: white;
+    background-color: #efb6d4;
+}
+button:active{
+    color: white;
+    background-color: #d74894;
+}

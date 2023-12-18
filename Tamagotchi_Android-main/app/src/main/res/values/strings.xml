@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Tamagotchi</string>
+    <string name="item_default_name">item</string>
+    <string name="item_default_price">0</string>
+</resources>

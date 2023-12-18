@@ -1,0 +1,116 @@
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background: black;
+}
+
+@font-face {
+    font-family: "p5hatty";
+    src: url("../asset/font/p5hatty.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "earwing factory rg";
+    src: url("../asset/font/earwig\ factory\ rg.otf") format("opentype");
+}
+  
+.background-image {
+    background-image: url('../asset/inscription_page.png');
+    background-size: 80% auto;
+    background-position: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-repeat: no-repeat;
+}
+
+* {
+    padding: 0px;
+    margin: 0px;
+}
+
+.input {
+    width: 275px;
+    height: 40px;
+    opacity: 1;
+    color: #FFFFFF;
+    border: 6px solid white;
+    padding-left: 10px;
+    padding-right: 40px;
+    margin-top: 10px;
+    width: 150px; 
+    height: 50px;
+    background: black;
+    font-family: "p5hatty";
+    font-size: 20px;
+}
+
+.uti{
+    transform: skew(-20deg);
+}
+
+.mdp{
+    transform: skew(-20deg);
+}
+
+.tel{
+    transform: skew(20deg);
+}
+
+.cmdp{
+    transform: skew(20deg);
+}
+
+.email{
+    transform: skew(-20deg);
+}
+
+
+.main {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 100vh;
+}
+
+.first {
+    width: 50%;
+    margin-top: 125vh;
+}
+
+.forms {
+    display: flex;
+    flex-direction: column;
+    margin-top: -37rem;
+    margin-left: auto;
+    text-align: right;
+    align-items: center; /* Centrer verticalement les éléments */
+}
+
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  border-color: transparent;
+  width: auto;
+  font-size: 5px;
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  transition: transform 0.5s; /* Ajoute une transition pour l'animation */
+}
+
+.button img {
+  height: 25rem;
+  width: auto;
+  margin-top: -6rem;
+}
+
+.button:hover {
+  transform: rotate(360deg); /* Effectue une rotation de 360 degrés au survol */
+}

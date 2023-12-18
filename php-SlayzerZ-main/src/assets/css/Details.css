@@ -1,0 +1,105 @@
+.Container{
+    display: flex;
+}
+.Infos{
+    /* display: flex; */
+    /* flex: 1; */
+    padding: 20px;
+    /* flex-wrap: wrap; */
+}
+.Photo{
+    /* display: block; */
+    /* max-width: 50%; */
+    padding: 20px;
+    /* background-color: #00223e; */
+    color: white;
+}
+#Photo{
+    max-width: 50%;
+}
+.Infos ul li{
+    list-style: none;
+    margin-bottom: 10%;
+}
+.Reserver{
+    border-color: black;
+}
+.AvisB{
+    border-color: black;
+}
+button:hover{
+    background-color: #efb6d4;
+}
+button:active{
+    background-color: #d74894;
+}
+.Infos textarea{
+    display: block;
+    width: 180%;
+    height: 120px;
+}
+#F{
+    position: absolute;
+    max-width: 10%;
+    height: 7%;
+    right: 0;
+    transition: all 0.5s;
+}
+#F:hover{
+    transform: scale(1.5);
+}
+#avis{
+    text-align: center;
+}
+.avis{
+    display: flex;
+    flex-direction: column;
+}
+.Avis{
+    display: flex;
+}
+.Avis fieldset{
+    box-sizing: border-box;
+    max-width: 25%;
+}
+.Note{
+    flex-direction: row;
+}
+.checked{
+    color: orange;
+}
+
+.rate {
+    height: 46px;
+    padding: 0 10px;
+}
+.rate:not(:checked) > input {
+    position:absolute;
+    top:-9999px;
+}
+.rate:not(:checked) > label {
+    float:right;
+    width:1em;
+    overflow:hidden;
+    white-space:nowrap;
+    cursor:pointer;
+    font-size:30px;
+    color:#ccc;
+}
+.rate:not(:checked) > label:before {
+    content: '★ ';
+}
+.rate > input:checked ~ label {
+    color: #ffc700;    
+}
+.rate:not(:checked) > label:hover,
+.rate:not(:checked) > label:hover ~ label {
+    color: #deb217;  
+}
+.rate > input:checked + label:hover,
+.rate > input:checked + label:hover ~ label,
+.rate > input:checked ~ label:hover,
+.rate > input:checked ~ label:hover ~ label,
+.rate > label:hover ~ input:checked ~ label {
+    color: #c59b08;
+}

@@ -1,0 +1,52 @@
+.WText{
+    /* display: flex; */
+    position: absolute;
+    text-align: center;
+    left: 20%;
+    z-index: 1;
+    color: white;
+}
+.presentation{
+    /* display: flex; */
+    text-align: center;
+    color: white;
+    position: absolute;
+    text-align: center;
+    margin-top: -20%;
+    left: 10%;
+    z-index: 1;
+}
+.presentation2{
+    text-align: center;
+}
+#Z{
+    /* display: flex; */
+    text-align: center;
+    color: white;
+    background-color: #00223e;
+}
+#Z h2{
+    margin: 0;
+}
+.presentation3{
+    text-align: center;
+    background-color: #00223e;;
+    color: red;
+}
+.presentation3 h2{
+    margin: 0;
+}
+#i{
+   max-width: 100%;
+   max-height: 100%;
+   filter: contrast(50%);
+}
+#j{
+    max-width: 80%;
+    max-height: 80%;
+    /* filter: contrast(50%); */
+ }
+.background{
+    display: flex;
+    justify-content: center;
+}

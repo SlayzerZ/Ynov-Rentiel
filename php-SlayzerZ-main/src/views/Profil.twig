@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assets/css/Profil.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="icon" type="image/jpg" href="../assets/pictures/bangkok.jpg">
+    <title>Bête de Caisse</title>
+</head>
+<body>
+    {% include '_header.twig' %}
+    <div class="Container">
+        {% if user.Image == "minato.png" %}
+            <div class="Photo">
+                <button class="btn"><img src="../assets/pictures/profil/{{ user.Image }}" id="minato"></button>
+            </div>
+        {% elseif user.Image == "speedy.png" %}
+            <div class="Photo">
+                <button class="btn"><img src="../assets/pictures/profil/{{ user.Image }}" id="minato"></button>
+            </div>
+        {% elseif user.Image == "FlashRender.png" %}
+            <div class="Photo">
+                <button class="btn"><img src="../assets/pictures/profil/{{ user.Image }}" id="minato"></button>
+            </div>
+        {% else %}
+        <div class="Photo">
+            <button class="btn"><img src="../assets/pictures/profil/{{ user.Image }}" id="Photo"></button>
+        </div>
+        {% endif %}
+        <div class="Infos">
+            <label for="user" class="user">Nom : {{ user.FirstName }} {{ user.LastName }}</label>
+            <label for="user" class="user">Email : {{ user.Email }}</label>
+            <label for="user" class="user">Téléphone : {{ user.PhoneNumber }}</label>
+        </div>
+        <div class="Fav">
+            <h2>Favoris :</h2>
+            {% for fav in favs %}
+                <div class="favs">
+                    <fieldset>
+                        <img src="../assets/pictures/cars/{{ fav.Image }}" id="miniature">
+                        <label for="favoris" class="favoris">Marque : {{ fav.Brand }}</label>
+                        <label for="favoris" class="favoris">Couleur : {{ fav.Color }}</label>
+                        <label for="favoris" class="favoris">Sièges : {{ fav.Seat }} places</label>
+                        <a href="/details?id={{ fav.VehiculeID }}">Voir les détails</a>
+                    </fieldset>
+                </div>
+            {% endfor %}
+        </div>
+        <div class="History">
+            <h2>Historique :</h2>
+            {# {{ dump(books) }} #}
+            {% for book in books %}
+                <div class="favs">
+                    <fieldset>
+                        <img src="../assets/pictures/cars/{{ book.Image }}" id="miniature">
+                        <label for="favoris" class="favoris">Marque : {{ book.Brand }}</label>
+                        <label for="favoris" class="favoris">Couleur : {{ book.Color }}</label>
+                        <label for="favoris" class="favoris">Date de début : {{ book.Start }}</label>
+                        <label for="favoris" class="favoris">Date de fin : {{ book.End }}</label>
+                        <label for="favoris" class="favoris">Prix Total : {{ book.PriceT }}€</label>
+                    </fieldset>
+                </div>
+            {% endfor %}
+        </div>
+        <div class="Feedback">
+            <h2>Avis :</h2>
+            {% for review in reviews %}
+                <fieldset>
+                    <div class="avis">
+                        <img src="../assets/pictures/cars/{{ review.Image }}" id="miniature">
+                        <label for="favoris" class="favoris">Marque : {{ review.Brand }}</label>
+                        <div class="Note">
+                        {% if review.Note == 5 %}
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                        {% elseif review.Note == 4 %}
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star"></span>
+                        {% elseif review.Note == 3 %}
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
+                        {% elseif review.Note == 2 %}
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
+                        {% elseif review.Note == 1 %}
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
+                        {% endif %}
+                        </div>
+                        <textarea disabled>{{ review.Text }}</textarea>
+                    </div>
+                </fieldset>
+            {% endfor %}
+        </div>
+        {% if user.Admin %}
+        <div class="Panel"><a href="/adminPanel">Admin Panel</a></div>
+        {% endif %}
+    </div>
+</body>
+</html>

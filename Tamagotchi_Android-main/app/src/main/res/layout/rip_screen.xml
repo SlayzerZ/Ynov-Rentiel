@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center_horizontal">
+
+        <TextView
+            android:id="@+id/RIP"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="RIP"
+            android:textAlignment="center"
+            android:textSize="96sp" />
+
+        <ImageView
+            android:id="@+id/tama5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/amy" />
+
+        <TextView
+            android:id="@+id/CJ2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Ci-gît : "
+            android:textAlignment="center"
+            android:textSize="34sp" />
+
+        <TextView
+            android:id="@+id/CJ"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Ci-git tamagotchi, parti trop tôt"
+            android:textAlignment="center"
+            android:textSize="34sp" />
+
+        <TextView
+            android:id="@+id/death2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Cause du dèces :"
+            android:textAlignment="center"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/death"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Cause du dèces :"
+            android:textAlignment="center"
+            android:textSize="16sp" />
+
+        <Button
+            android:id="@+id/menu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Retour au Menu"
+            android:textAlignment="center" />
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

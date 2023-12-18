@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assets/css/Search.css">
+    <link rel="icon" type="image/jpg" href="../assets/pictures/bangkok.jpg">
+    <title>Bête de caisse</title>
+</head>
+<body>
+    {% include '_header2.twig' %}
+    <hr/>
+    <div class="Container">
+    <div class="filters">
+        <h2 id="BF"><u>Filtres</u></h2>
+        <form action="/applyFilters" method="post">
+            <div id="Brand">
+                <label for="filter">Marque : <br/></label>
+                <select list="Brand" id="myBrand" name="myBrand">
+                    <option value="Tous" selected>Tous</option>
+                    {% for brand in brands %}
+                        <option value="{{ brand.Name }}">{{ brand.Name }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div id="Seat">
+                <label for="filter">Nb de Places : <br/></label>
+                <select list="Seat" id="mySeat" name="mySeat">
+                    <option value="Tous" selected>Tous</option>
+                    {% for seat in seats %}
+                        <option value="{{ seat.Seat }}">{{ seat.Seat }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div id="Color">
+                <label for="filter">Couleur : <br/></label>
+                <select list="Color" id="myColor" name="myColor">
+                    <option value="Tous" selected>Tous</option>
+                    {% for color in colors %}
+                        <option value="{{ color.Name }}">{{ color.Name }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div id="Price">
+                <label for="filter">Prix/J : <br/></label>
+                <select list="Price" id="myPrice" name="myPrice">
+                    <option value="Tous" selected>Tous</option>
+                    <option value="20">20 ou -</option>
+                    <option value="40">40 ou -</option>
+                    <option value="60">60 ou -</option>
+                    <option value="80">80 ou -</option>
+                    <option value="100">100 ou -</option>
+                    <option value="120">120 ou -</option>
+                    <option value="140">140 ou -</option>
+                    <option value="160">160 ou -</option>
+                    <option value="180">180 ou -</option>
+                </select>
+            </div>
+            <div id="But">
+            <button id="submit">Appliquer</button>
+            </div>
+        </form>
+        <hr>
+        <form action="/findLocation" method="post">
+        <div id="Location">
+            <label for="filter"><br> Localisation : <br/></label>
+            <select list="Location" id="myLocation" name="myLocation">
+                <option value="Tous" selected>Tous</option>
+                {% for city in cities %}
+                    <option value="{{ city.Name }}">{{ city.Name }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div id="But">
+            <button id="submit">Appliquer</button>
+        </div>
+    </form>
+    </div>
+    <div class="Vehicules">
+        {% for vehicule in vehicules %}
+            <fieldset>
+                <img src="../assets/pictures/cars/{{ vehicule.Image }}" class="miniature"/>
+                <div class="infos">
+                 Marque : {{ vehicule.Brand }} <br/> Prix/J : {{ vehicule.PriceJ }}€
+                </div>
+                <div class="D"><a href="/details?id={{ vehicule.ID }}">Voir les détails</a></div>
+            </fieldset>
+        {% endfor %}
+    </div>
+    </div>
+    {# {% include '_footer.twig' %} #}
+</body>
+</html>

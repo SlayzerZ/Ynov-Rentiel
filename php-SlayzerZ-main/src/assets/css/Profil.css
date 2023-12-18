@@ -1,0 +1,91 @@
+.Container{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+    grid-auto-rows: minmax(100px, auto);
+}
+.btn{
+    border-radius: 50%;
+    background-color: transparent;
+    width: 140px;
+    height: 140px;
+}
+.Photo{
+    grid-column: 2;
+    grid-row: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10vh;
+}
+#Photo{
+    max-width: 80%;
+    transition: all 0.5s;
+    cursor: pointer;
+}
+#minato{
+    max-width: 50%;
+    transition: all 0.5s;
+    cursor: pointer;
+}
+#miniature{
+    max-width: 50%;
+}
+.favoris{
+    display: flex;
+    flex-direction: column;
+}
+.Fav fieldset{
+    max-width: 40%;
+}
+.Feedback fieldset{
+    max-width: 40%;
+}
+.History fieldset{
+    max-width: 50%;
+}
+.favs{
+    /* display: flex; */
+}
+.Infos{
+    grid-column: 2;
+    grid-row: 2;
+    display: flex;
+    flex-direction: column;
+    margin-top: 10vh;
+    align-items: center;
+    /* max-width: 40%; */
+}
+.Feedback{
+    grid-column: 3;
+    grid-row: 3;
+}
+.user{
+    margin-bottom: 7vh;
+}
+.Panel{
+    /* margin-top: 10vh; */
+    grid-column: 1;
+    grid-row: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.Fav{
+    grid-column: 1;
+    grid-row: 3;
+}
+.History{
+    grid-column: 2;
+    grid-row: 3;
+}
+#Photo:hover{
+    transform: scale(1.5)
+}
+#minato:hover{
+    transform: scale(1.5)
+}
+.checked{
+    color: orangered;
+}

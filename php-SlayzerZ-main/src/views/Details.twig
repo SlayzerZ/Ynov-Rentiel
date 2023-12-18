@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assets/css/Details.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="icon" type="image/jpg" href="../assets/pictures/bangkok.jpg">
+    <title>Bête de Caisse</title>
+</head>
+<body>
+    {% include '_header.twig' %}
+    <div class="Container">
+        {# <div class="Photo"> #}
+            <img src="../assets/pictures/cars/{{ vehicule.Image }}" id="Photo">
+        {# </div> #}
+        <div class="Infos">
+            <ul>
+                <li>Marque : {{ vehicule.Brand }}</li>
+                <li>Nb de places : {{ vehicule.Seat }}</li>
+                <li>Couleur : {{ vehicule.Color }}</li>
+                <li>Localisation : {{ vehicule.Location }}</li>
+                <li>Prix à la Journée : {{ vehicule.PriceJ }}€</li>
+                <li>Disponibilité : {{ free }}</li>
+                <li style="visibility: {{ visible }};">Réserver-là => <a href="/booking?id={{ vehicule.ID }}"><button class="Reserver">-^^-</button></a></li>
+            </ul>
+    </div>
+    {% if feed %}
+        <div class="Infos">
+            <form action="/feedback" method="post">
+                <label for="feedback">Laissez Un Avis : <br></label>
+                <select style="visibility: hidden;" list="car" id="myCar" name="myCar">
+                    <option value="{{ vehicule.ID }}" selected>{{ vehicule.ID }}</option>
+                </select>
+                <label for="feedback"><br>Note :</label>
+                <div class="rate">
+                    <input type="radio" id="star5" name="rate" value="5" />
+                    <label for="star5" title="5">5 stars</label>
+                    <input type="radio" id="star4" name="rate" value="4" />
+                    <label for="star4" title="4">4 stars</label>
+                    <input type="radio" id="star3" name="rate" value="3" />
+                    <label for="star3" title="3">3 stars</label>
+                    <input type="radio" id="star2" name="rate" value="2" />
+                    <label for="star2" title="2">2 stars</label>
+                    <input type="radio" id="star1" name="rate" value="1" />
+                    <label for="star1" title="1">1 star</label>
+                  </div>
+                <textarea id="myFB" name="myFB" placeholder="Tapez votre commentaire ici..."></textarea>
+                <div class="But"><button class="AvisB">°-°</button></div>
+            </form>
+        </div>
+    {% else %}
+    
+    {% endif %}
+    {% if fav is empty %}
+    <a href="/Fav?id={{ vehicule.ID }}"><img src="../assets/pictures/starNB.png" id="F" title="Mettre en Favoris"></a>
+    {% else %}
+    <a href="/Defav?id={{ vehicule.ID }}"><img src="../assets/pictures/star.png" id="F" title="Enlever des Favoris"></a>
+    {% endif %}
+    </div>
+    <div class="Container2">
+        <h2 id="avis">Avis</h2>
+        <div class="Avis">
+            {% for review in reviews %}
+                {% if review.Admin %}
+                <fieldset style="border-color: red;">
+                {% else %}
+                <fieldset>
+                {% endif %}
+                    <div class="avis">
+                        {{ review.FirstName }} {{ review.LastName }} <br>
+                        <div class="Note">
+                        {% if review.Note == 5 %}
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                        {% elseif review.Note == 4 %}
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star"></span>
+                        {% elseif review.Note == 3 %}
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
+                        {% elseif review.Note == 2 %}
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
+                        {% elseif review.Note == 1 %}
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
+                        {% endif %}
+                        </div>
+                        {# {{ review.Note }} #}
+                        <textarea disabled>{{ review.Text }}</textarea>
+                    </div>
+                </fieldset>
+            {% endfor %}
+        </div>
+    </div>
+    {# {% include '_footer.twig' %} #}
+</body>
+</html>

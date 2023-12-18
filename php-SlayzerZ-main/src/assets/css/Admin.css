@@ -1,0 +1,17 @@
+.Container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10%;
+}
+.Types{
+    text-align: center;
+    margin-left: 5%;
+}
+.infos{
+    display: flex;
+    flex-direction: column;
+}
+.link{
+    margin-bottom: 5%;
+}

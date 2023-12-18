@@ -1,0 +1,73 @@
+.Container{
+    display: flex;
+}
+.Vehicules{
+    display: flex;
+    flex: 1;
+    padding: 20px;
+    flex-wrap: wrap;
+}
+.V2{
+    max-width: 67%;
+    display: grid;
+}
+fieldset{
+    box-sizing: border-box;
+}
+.filters{
+    /* display: block; */
+    width: 25%;
+    padding: 20px;
+    background-color: #00223e;
+    color: white;
+}
+hr{
+    background-color: #00223e;
+}
+#Brand{
+    margin-bottom: 10%;
+}
+#Color{
+    margin-bottom: 10%;
+}
+#Seat{
+    margin-bottom: 10%;
+}
+#Price{
+    margin-bottom: 10%;
+}
+#BF{
+    color:#c9ee00;
+    text-align: center;
+}
+#But{
+    display: flex;
+    justify-content: center;
+}
+#submit{
+    background-color: rgb(255, 151, 174);
+    color: white;
+}
+#myLocation{
+    text-align: center;
+}
+#Location{
+    margin-bottom: 10%;
+    text-align: center;
+}
+label{
+    color:#c9ee00;
+}
+hr{
+    background-color: #00223e; 
+    height: 10px; 
+    margin:0;
+}
+.miniature{
+    max-width: 40%;
+    max-height: 40%;
+}
+fieldset{
+    max-width: 20%;
+    max-height: 40%;
+}

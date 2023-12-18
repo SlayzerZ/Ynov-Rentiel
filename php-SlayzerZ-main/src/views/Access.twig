@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assets/css/Access.css">
+    <link rel="icon" type="image/jpg" href="../assets/pictures/bangkok.jpg">
+    <title>Bête de caisse</title>
+</head>
+<body>
+    {% include '_header.twig' %}
+    <div class="Container">
+        {% if action == 'modify' %}
+            {% if type == 'Brand' %}
+                {% for item in items %}
+                <div class="infos">
+                    <form action="/modify" method="post">
+                        <div style="visibility: hidden;">
+                        <label for="type">Type: </label>
+                        <select list="type" id="type" name="type">
+                            <option value="{{ type }}" selected>{{ type }}</option>
+                        </select>
+                        </div>
+                        <label for="id">ID: </label>
+                        <select list="id" id="id" name="id">
+                            <option value="{{ item.ID }}" selected>{{ item.ID }}</option>
+                        </select>
+                        <label for="Brand">Marque: </label><input class="values" value="{{ item.Name }}" name="brand"></input>
+                        <button class="apply">Appliquer</button>
+                        <a href="/delete?type={{ type }}&id={{ item.ID }}"><img src="../assets/pictures/delete.png" class="delete" title="Supprimer"></a>
+                    </form>  
+                </div>
+                {% endfor %}
+            {% elseif type == 'Seat' %}
+                {% for item in items %}
+                    <div class="infos">
+                        <form action="/modify" method="post">
+                            <div style="visibility: hidden;">
+                            <label for="type">Type: </label>
+                            <select list="type" id="type" name="type">
+                                <option value="{{ type }}" selected>{{ type }}</option>
+                            </select>
+                            </div>
+                            <label for="id">ID: </label>
+                            <select list="id" id="id" name="id">
+                                <option value="{{ item.ID }}" selected>{{ item.ID }}</option>
+                            </select>
+                            <label for="Seat">Places: </label><input class="values" value="{{ item.Seat }}" name="seat"></input>
+                            <button class="apply">Appliquer</button>
+                            <a href="/delete?type={{ type }}&id={{ item.ID }}"><img src="../assets/pictures/delete.png" class="delete" title="Supprimer"></a>
+                        </form>  
+                    </div>
+                {% endfor %}
+            {% elseif type == 'Color' %}
+                {% for item in items %}
+                    <div class="infos">
+                        <form action="/modify" method="post">
+                            <div style="visibility: hidden;">
+                            <label for="type">Type: </label>
+                            <select list="type" id="type" name="type">
+                                <option value="{{ type }}" selected>{{ type }}</option>
+                            </select>
+                            </div>
+                            <label for="id">ID: </label>
+                            <select list="id" id="id" name="id">
+                                <option value="{{ item.ID }}" selected>{{ item.ID }}</option>
+                            </select>
+                            <label for="color">Couleur: </label><input class="values" value="{{ item.Name }}" name="color"></input>
+                            <button class="apply">Appliquer</button>
+                            <a href="/delete?type={{ type }}&id={{ item.ID }}"><img src="../assets/pictures/delete.png" class="delete" title="Supprimer"></a>
+                        </form>  
+                    </div>
+                {% endfor %}
+            {% elseif type == 'Users' %}
+                {% for item in items %}
+                    <div class="infos">
+                        <form action="/modify" method="post">
+                            <div style="visibility: hidden;">
+                            <label for="type">Type: </label>
+                            <select list="type" id="type" name="type">
+                                <option value="{{ type }}" selected>{{ type }}</option>
+                            </select>
+                            </div>
+                            <label for="id">ID: </label>
+                            <select list="id" id="id" name="id">
+                                <option value="{{ item.ID }}" selected>{{ item.ID }}</option>
+                            </select>
+                            <label for="image">Image: </label><input class="values" value="{{ item.Image }}" name="image"></input>
+                            <label for="firstname">Prénom: </label><input class="values" value="{{ item.FirstName }}" name="firstname"></input>
+                            <label for="lastname">Nom: </label><input class="values" value="{{ item.LastName }}" name="lastname"></input>
+                            <label for="email">Email: </label><input type="email" class="values" value="{{ item.Email }}" name="email"></input>
+                            <label for="phonenumber">Téléphone: </label><input class="values" value="{{ item.PhoneNumber }}" name="phonenumber"></input>
+                            <label for="password">Mot de Passe: </label><input class="values" value="" name="password"></input>
+                            {% if item.Admin %}
+                            <label for="admin">Admin: </label><input type="checkbox" class="values" name="admin" checked></input>
+                            {% else %}
+                            <label for="admin">Admin: </label><input type="checkbox" class="values" name="admin"></input>
+                            {% endif %}
+                            <button class="apply">Appliquer</button>
+                            <a href="/delete?type={{ type }}&id={{ item.ID }}"><img src="../assets/pictures/delete.png" class="delete" title="Supprimer"></a>
+                        </form>  
+                    </div>
+                {% endfor %}
+            {% elseif type == 'Vehicules' %}
+                {% for item in items %}
+                    <div class="infos">
+                        <form action="/modify" method="post">
+                            <div style="visibility: hidden;">
+                            <label for="type">Type: </label>
+                            <select list="type" id="type" name="type">
+                                <option value="{{ type }}" selected>{{ type }}</option>
+                            </select>
+                            </div>
+                            <label for="id">ID: </label>
+                            <select list="id" id="id" name="id">
+                                <option value="{{ item.ID }}" selected>{{ item.ID }}</option>
+                            </select>
+                            <label for="brandid">MarqueID: </label><input class="values" value="{{ item.BrandID }}" name="brandid"></input>
+                            <label for="seatid">PlacesID: </label><input class="values" value="{{ item.SeatID }}" name="seatid"></input>
+                            <label for="colorid">CouleurID: </label><input class="values" value="{{ item.ColorID }}" name="colorid"></input>
+                            <label for="image">Image: </label><input class="values" value="{{ item.Image }}" name="image"></input>
+                            <label for="location">Lieu: </label><input class="values" value="{{ item.Location}}" name="location"></input>
+                            <label for="price">Prix/J(€): </label><input class="values" value="{{ item.PriceJ }}" name="price"></input>
+                            {% if item.isFree %}
+                            <label for="free">Disponible: </label><input type="checkbox" class="values" name="free" checked></input>
+                            {% else %}
+                            <label for="free">Disponible: </label><input type="checkbox" class="values" name="free"></input>
+                            {% endif %}
+                            <button class="apply">Appliquer</button>
+                            <a href="/delete?type={{ type }}&id={{ item.ID }}"><img src="../assets/pictures/delete.png" class="delete" title="Supprimer"></a>
+                        </form>  
+                    </div>
+                {% endfor %}
+            {% elseif type == 'FeedBack' %}
+                {% for item in items %}
+                    <div class="infos">
+                        <form action="/modify" method="post">
+                            <div style="visibility: hidden;">
+                            <label for="type">Type: </label>
+                            <select list="type" id="type" name="type">
+                                <option value="{{ type }}" selected>{{ type }}</option>
+                            </select>
+                            </div>
+                            <label for="id">ID: </label>
+                            <select list="id" id="id" name="id">
+                                <option value="{{ item.ID }}" selected>{{ item.ID }}</option>
+                            </select>
+                            <label for="userid">UserID: </label><input class="values" value="{{ item.UserID }}" name="userid"></input>
+                            <label for="vehiculeid">vehiculeID: </label><input class="values" value="{{ item.VehiculeID }}" name="vehiculeid"></input>
+                            <label for="note">Note: </label>
+                            <select list="note" id="note" name="note">
+                                <option value="5" selected>5</option>
+                                <option value="4">4</option>
+                                <option value="3">3</option>
+                                <option value="2">2</option>
+                                <option value="1">1</option>
+                            </select>
+                            <label for="text">Texte: </label><textarea class="values" name="text">{{ item.Text }}</textarea>
+                            <button class="apply">Appliquer</button>
+                            <a href="/delete?type={{ type }}&id={{ item.ID }}"><img src="../assets/pictures/delete.png" class="delete" title="Supprimer"></a>
+                        </form>  
+                    </div>
+                {% endfor %}
+            {% endif %}
+        {% elseif action == 'create' %}
+            {% if type == 'Brand' %}
+                <div class="infos">
+                    <form action="/create" method="post">
+                        <div style="visibility: hidden;">
+                            <label for="type">Type: </label>
+                            <select list="type" id="type" name="type">
+                                <option value="{{ type }}" selected>{{ type }}</option>
+                            </select>
+                        </div>
+                        <label for="Brand">Marque: </label><input class="values" value="" name="brand"></input>
+                        <button class="apply">Appliquer</button>
+                    </form>  
+                </div>
+            {% elseif type == 'Seat' %}
+                    <div class="infos">
+                        <form action="/create" method="post">
+                            <div style="visibility: hidden;">
+                                <label for="type">Type: </label>
+                                <select list="type" id="type" name="type">
+                                    <option value="{{ type }}" selected>{{ type }}</option>
+                                </select>
+                            </div>
+                            <label for="Seat">Places: </label><input class="values" value="" name="seat"></input>
+                            <button class="apply">Appliquer</button>
+                        </form>  
+                    </div>
+            {% elseif type == 'Color' %}
+                <div class="infos">
+                    <form action="/create" method="post">
+                        <div style="visibility: hidden;">
+                            <label for="type">Type: </label>
+                            <select list="type" id="type" name="type">
+                                <option value="{{ type }}" selected>{{ type }}</option>
+                            </select>
+                        </div>
+                        <label for="Color">Couleur: </label><input class="values" value="" name="color"></input>
+                        <button class="apply">Appliquer</button>
+                    </form>  
+                </div>
+            {% elseif type == 'Users' %}
+                <div class="infos">
+                    <form action="/create" method="post">
+                        <div style="visibility: hidden;">
+                        <label for="type">Type: </label>
+                        <select list="type" id="type" name="type">
+                            <option value="{{ type }}" selected>{{ type }}</option>
+                        </select>
+                        </div>
+                        <label for="id">ID: </label><input class="values" name="id"></input>
+                        <label for="image">Image: </label><input class="values" name="image"></input>
+                        <label for="firstname">Prénom: </label><input class="values" name="firstname"></input>
+                        <label for="lastname">Nom: </label><input class="values" name="lastname"></input>
+                        <label for="email">Email: </label><input type="email" class="values" name="email"></input>
+                        <label for="phonenumber">Téléphone: </label><input class="values" name="phonenumber"></input>
+                        <label for="password">Mot de Passe: </label><input class="values" name="password"></input>
+                        <button class="apply">Appliquer</button>
+                    </form>  
+                </div>
+            {% elseif type == 'Vehicules' %}
+                <div class="infos">
+                    <form action="/create" method="post">
+                        <div style="visibility: hidden;">
+                        <label for="type">Type: </label>
+                        <select list="type" id="type" name="type">
+                            <option value="{{ type }}" selected>{{ type }}</option>
+                        </select>
+                        </div>
+                        <label for="brandid">MarqueID: </label><input class="values" name="brandid"></input>
+                        <label for="seatid">PlacesID: </label><input class="values" name="seatid"></input>
+                        <label for="colorid">CouleurID: </label><input class="values" name="colorid"></input>
+                        <label for="image">Image: </label><input class="values" name="image"></input>
+                        <label for="location">Lieu: </label><input class="values" name="location"></input>
+                        <label for="price">Prix/J(€): </label><input class="values" name="price"></input>
+                        <button class="apply">Appliquer</button>
+                    </form>  
+                </div>
+            {% elseif type == 'FeedBack' %}
+                <div class="infos">
+                    <form action="/create" method="post">
+                        <div style="visibility: hidden;">
+                        <label for="type">Type: </label>
+                        <select list="type" id="type" name="type">
+                            <option value="{{ type }}" selected>{{ type }}</option>
+                        </select>
+                        </div>
+                        <label for="userid">UserID: </label><input class="values" name="userid"></input>
+                        <label for="vehiculeid">vehiculeID: </label><input class="values" name="vehiculeid"></input>
+                        <label for="note">Note: </label>
+                        <select list="note" id="note" name="note">
+                            <option value="5" selected>5</option>
+                            <option value="4">4</option>
+                            <option value="3">3</option>
+                            <option value="2">2</option>
+                            <option value="1">1</option>
+                        </select>
+                        <label for="text">Texte: </label><textarea class="values" name="text"></textarea>
+                        <button class="apply">Appliquer</button>
+                    </form>  
+                </div>
+            {% endif %}
+        {% endif %}
+    </div>
+{% if action == "modify" and type != "Users" %}
+<div class="back">
+<a href="/truncate?type={{ type }}" class="back">Truncate<br></a>
+</div>
+{% endif %}
+<a href="/adminPanel" class="back">Back</a>
+</body>
+</html>

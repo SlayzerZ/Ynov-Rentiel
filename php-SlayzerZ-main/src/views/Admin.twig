@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assets/css/Admin.css">
+    <link rel="icon" type="image/jpg" href="../assets/pictures/bangkok.jpg">
+    <title>Bête de caisse</title>
+</head>
+<body>
+    {% include '_header.twig' %}
+    <div class="Container">
+        <div class="Types">
+            <fieldset class="infos">
+                <h2>Marques</h2>
+                <a href="/access?type=Brand&Action=create" class="link">Créer</a>
+                <a href="/access?type=Brand&Action=modify" class="link">Modifier</a>
+            </fieldset>
+        </div>
+        <div class="Types">
+            <fieldset class="infos">
+                <h2>Places</h2>
+                <a href="/access?type=Seat&Action=create" class="link">Créer</a>
+                <a href="/access?type=Seat&Action=modify" class="link">Modifier</a>
+            </fieldset>
+        </div>
+        <div class="Types">
+            <fieldset class="infos">
+                <h2>Couleurs</h2>
+                <a href="/access?type=Color&Action=create" class="link">Créer</a>
+                <a href="/access?type=Color&Action=modify" class="link">Modifier</a>
+            </fieldset>
+        </div>
+        <div class="Types">
+            <fieldset class="infos">
+                <h2>Utilisateurs</h2>
+                <a href="/access?type=Users&Action=create" class="link">Créer</a>
+                <a href="/access?type=Users&Action=modify" class="link">Modifier</a>
+            </fieldset>
+        </div>
+        <div class="Types">
+            <fieldset class="infos">
+                <h2>Vehicules</h2>
+                <a href="/access?type=Vehicules&Action=create" class="link">Créer</a>
+                <a href="/access?type=Vehicules&Action=modify" class="link">Modifier</a>
+            </fieldset>
+        </div>
+        <div class="Types">
+            <fieldset class="infos">
+                <h2>Avis</h2>
+                <a href="/access?type=FeedBack&Action=create" class="link">Créer</a>
+                <a href="/access?type=FeedBack&Action=modify" class="link">Modifier</a>
+            </fieldset>
+        </div>
+    </div>
+</body>
+</html>

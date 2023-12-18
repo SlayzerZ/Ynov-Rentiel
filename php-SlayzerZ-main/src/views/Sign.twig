@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assets/css/Sign.css">
+    <link rel="icon" type="image/jpg" href="../assets/pictures/bangkok.jpg">
+    <title>Bête de caisse</title>
+</head>
+<body>
+    {% include '_header.twig' %}
+    <div class="Container">
+        <div class="Connexion">
+            <h2>Connexion</h2>
+            <form action="signin" method="post">
+                <div id="Email">
+                    <label for="filter">Email ou N° téléphone : <br/></label>
+                    <input type="text" id="myEM" name="myEM" class="field"/>
+                </div>
+                <div id="Password">
+                    <label for="filter">Mot de Passe : <br/></label>
+                    <input type="password" id="myPS" name="myPS" class="field"/>
+                </div>
+                <div class="But" id="But1">
+                    <button id="submit">Revenir!</button>
+                </div>
+            </form>
+            {{ user2 }}
+            {{ echec }}
+        </div>
+        <div class="Inscription">
+            <h2>Inscription</h2>
+            <form action="signup" method="post">
+                <div id="FirstName">
+                    <label for="filter">Prénom : <br/></label>
+                    <input type="text" id="myFN" name="myFN" class="field"/>
+                </div>
+                <div id="LastName">
+                    <label for="filter">Nom : <br/></label>
+                    <input type="text" id="myLN" name="myLN" class="field"/>
+                </div>
+                <div id="PhoneNumber">
+                    <label for="filter">N° téléphone : <br/></label>
+                    <input type="text" id="myPN" name="myPN" class="field" placeholder="Veuillez rentrer le n° complet avec l'indicatif"/>
+                </div>
+                <div id="Email">
+                    <label for="filter">Email : <br/></label>
+                    <input type="email" id="myEM" name="myEM" class="field"/>
+                </div>
+                <div id="Password">
+                    <label for="filter">Mot de Passe : <br/></label>
+                    <input type="password" id="myPS" name="myPS" class="field"/>
+                </div>
+                <div class="But" id="But2">
+                <button id="submit">S'inscrire</button>
+                </div>
+            </form>
+            {{ user }}
+        </div>
+    </div>
+</body>
+</html>

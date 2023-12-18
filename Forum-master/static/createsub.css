@@ -1,0 +1,252 @@
+/*all*/
+*{
+    margin: 0;
+    padding: 0;
+    background-color: black;
+}
+
+@font-face {
+    font-family: "earwing factory rg";
+    src: url("../asset/font/earwig\ factory\ rg.otf") format("opentype");
+}
+
+@font-face {
+    font-family: "p5hatty";
+    src: url("../asset/font/p5hatty.ttf") format("truetype");
+}
+
+/*header*/
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: transparent;
+    border-bottom:2px solid white;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: left;
+    margin-left: 14px;
+    padding: 14px 16px;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+}
+
+li a:hover:not(.active) {
+    background-color: #111;
+}
+
+.active {
+    background-color: transparent;
+}
+
+.home img {
+    width : 10%;
+    height : auto;
+    background-color: transparent;
+}
+.home{
+    color: transparent;
+    max-width: 700px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.home:hover{
+    color: white;
+}
+.map img {
+    width: 75%;
+    height: auto;
+}
+
+.active img {
+    width: 80%;
+    height: auto;
+}
+
+.sub img {
+    width: 80%;
+    height: auto;
+}
+
+#vol{
+    position: absolute;
+    right:0%;
+    max-width: 128px;
+    max-height: 128px;
+    cursor: pointer;
+  }
+
+select{
+    color: white;
+    font-family: "p5hatty";
+    position: absolute;
+}
+.dropdown{
+    display: inline-block;
+}
+#Element{
+    display: none;
+    z-index: 2;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    min-width: 200px;
+}
+.dropdown:hover #Element{
+    display: block;
+}
+.home text{
+    display: flex;
+    font-family: "p5hatty";
+    align-items: center;
+    margin-left: 10%;
+    background-color: transparent;
+}
+
+.profil text, .map text, .dropdown text, .active text {
+    visibility: hidden;
+    font-family: "p5hatty";
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    margin-top: 25%;
+}
+
+.profil:hover text, .map:hover text, .dropdown:hover text, .active:hover text {
+    visibility: visible;
+}
+/*header*/
+
+.home text{
+    display: flex;
+    font-family: "p5hatty";
+    align-items: center;
+    margin-left: 10%;
+    background-color: transparent;
+}
+/*header*/
+
+.title, .subject, .question {
+    display: flex;
+    align-items: center;
+}
+  
+.title img {
+    margin-right: 10px;
+    height: 10rem;
+    width: auto;
+}
+
+.title p{
+    color:white;
+    font-family: "earwing factory rg";
+    font-size: 100px;
+}
+
+
+/*body*/
+
+.info{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.contain {
+    width: 500px;
+    height: 50px;
+    background-color: transparent;
+    transform: skew(-20deg);
+    margin-left: 50px;
+    margin-top: 50px;
+    border: 2px solid white;
+    padding: 10px;
+}
+
+.contain p {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    color: #333;
+    text-align: center;
+}
+
+.question, .subject, .category {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.subject p, .question p, .question input, .subject input, .category p {
+    color: white;
+    margin-bottom: -2.5%;
+    font-family: "p5hatty";
+    font-size: 50px;
+    border: none;
+}
+.container {
+    width: 500px;
+    height: 50px;
+    background-color: transparent;
+    transform: skew(20deg);
+    margin-left: 50px;
+    margin-top: 50px;
+    border: 2px solid white;
+    padding: 10px;
+    border: none;
+  }
+  
+  .button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 19%;
+    padding-bottom: 20%;
+}
+
+.save {
+    width: 500px;
+    height: 500px;
+    background-size: cover;
+    background-position: center;
+    background-color: transparent;
+    border: none;
+    margin-top: -15%;
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    transition: transform 0.5s; /* Ajoute une transition pour l'animation */
+}
+
+.save {
+    background-image: url("../asset/tchat_right1.png");
+}
+
+.save:hover {
+    transform: rotate(360deg); /* Effectue une rotation de 360 degrés au survol */
+}
+  
+  .category {
+    color: white;
+    font-family: p5hatty;
+    font-size: 30px;
+  }
+  
+  .category select {
+    color: white;
+    font-family: p5hatty;
+    background-color: transparent;
+    cursor: pointer;
+    font-size: 50px;
+    border: 2px solid white;
+    height: 75px;
+    width: 500px;
+  }

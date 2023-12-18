@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assets/css/Booking.css">
+    <link rel="icon" type="image/jpg" href="../assets/pictures/bangkok.jpg">
+    <title>Bête de Caisse</title>
+</head>
+<body>
+    {% include '_header.twig' %}
+    <div class="Container">
+        {# <div class="Photo"> #}
+            <img src="../assets/pictures/cars/{{ vehicule.Image }}" id="Photo">
+        {# </div> #}
+        <div class="Infos">
+            <ul>
+                <form action="booker" method="post">
+                <li>Vous souhaitez booker :<select style="visibility: hidden;" list="car" id="myCar" name="myCar">
+                    <option value="{{ vehicule.ID }}" selected>{{ vehicule.ID }}</option>
+                </select></li>
+                <li>Marque : {{ vehicule.Brand }}</li>
+                <li>Prix à la Journée : {{ vehicule.PriceJ }}€</li>
+                <li>Localisation : {{ vehicule.Location }}</li>
+                <li>Date de début : <select list="car" id="Start" name="Start">
+                    <option value="{{ currentDate }}" selected>{{ currentDate }}</option>
+                    {% for nextDate in nextDates %}
+                        <option value="{{ nextDate }}">{{ nextDate }}</option>
+                    {% endfor %}
+                </select></li>
+                <li>Date de fin : <select list="car" id="End" name="End">
+                    {% for nextDate in nextDates %}
+                        <option value="{{ nextDate }}">{{ nextDate }}</option>
+                    {% endfor %}
+                </select></li>
+                <li id="pt">Montant Total : {{ vehicule.PriceJ }}€</li>
+                <li><button class="Reserver">-^^-</button></li>
+            </form>
+            </ul>
+    </div>
+    </div>
+    {# {% include '_footer.twig' %} #}
+    <script>
+        let price = document.getElementById("pt")
+        let select = document.getElementById("Start")
+        select.addEventListener('change',function () {
+            let date1 = new Date(this.value);
+            let date2 = new Date(select2.value);
+            let diffTime = Math.abs(date2 - date1);
+            let diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+            if (date2 < date1){
+                diffDays = diffDays * -1;
+            }
+            pt.innerText = "Montant Total : " + {{ vehicule.PriceJ }} * diffDays + "€"
+        })
+        let select2 = document.getElementById("End")
+        select2.addEventListener('change',function () {
+            let date1 = new Date(select.value);
+            let date2 = new Date(this.value);
+            let diffTime = Math.abs(date2 - date1);
+            let diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+            if (date2 < date1){
+                diffDays = diffDays * -1;
+            }
+            pt.innerText = "Montant Total : " + {{ vehicule.PriceJ }} * diffDays + "€"
+        })
+    </script>
+</body>
+</html>

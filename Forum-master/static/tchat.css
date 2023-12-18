@@ -1,0 +1,393 @@
+/*all*/
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-image: url(/asset/background2.png);
+    background-size:100%;
+    overflow-y:scroll;
+    overflow-x: hidden;
+    background-attachment: fixed;
+}
+/* width */
+::-webkit-scrollbar {
+    width: 15px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey; 
+    border-radius: 10px;
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: rgb(255, 0, 0); 
+    border-radius: 10px;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #b30000; 
+  }
+
+@font-face {
+    font-family: "earwing factory rg";
+    src: url("../asset/font/earwig\ factory\ rg.otf") format("opentype");
+}
+
+@font-face {
+    font-family: "p5hatty";
+    src: url("../asset/font/p5hatty.ttf") format("truetype");
+}
+
+
+/*header*/
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: transparent;
+    border-bottom:2px solid white;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: left;
+    margin-left: 14px;
+    padding: 14px 16px;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+}
+
+li a:hover:not(.active) {
+    background-color: #111;
+}
+
+.active {
+    background-color: transparent;
+}
+
+.home img {
+    width : 10%;
+    height : auto;
+    background-color: transparent;
+}
+.home{
+    color: transparent;
+    max-width: 700px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.home:hover{
+    color: white;
+}
+.map img {
+    width: 75%;
+    height: auto;
+}
+
+.active img {
+    width: 80%;
+    height: auto;
+}
+
+.sub img {
+    width: 80%;
+    height: auto;
+}
+
+#vol{
+    position: absolute;
+    right:0%;
+    max-width: 128px;
+    max-height: 128px;
+    cursor: pointer;
+  }
+
+select{
+    color: black;
+    font-family: "p5hatty";
+    position: absolute;
+}
+.dropdown{
+    display: inline-block;
+}
+#Element{
+    display: none;
+    z-index: 2;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    min-width: 200px;
+}
+.dropdown:hover #Element{
+    display: block;
+}
+.home text{
+    display: flex;
+    font-family: "p5hatty";
+    align-items: center;
+    margin-left: 10%;
+    background-color: transparent;
+}
+
+.sub text, .profil text, .dropdown text, .map text {
+    visibility: hidden;
+    font-family: "p5hatty";
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    margin-top: 25%;
+}
+
+.sub:hover text, .profil:hover text, .dropdown:hover text, .map:hover text {
+    visibility: visible;
+}
+/* header */
+
+.games{
+    /* position: absolute; */
+    top: 25%;
+    left: 12%;
+    height: 30%;
+    width: 15%;
+}
+.bullesujet{
+    /* position: absolute; */
+    top: 22%;
+    left: 25.5%;
+    height: 30%;
+    width:50%;
+}
+.sujet{
+    position: absolute;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    font-family: "p5hatty";
+    color: #ffffff;
+    width: 32%;
+    left: 25%;
+    top: 40%;
+    font-size: 300%;
+    letter-spacing: .3rem;
+}
+.sujet2{
+    position: absolute;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    font-family: "p5hatty";
+    color: #ffffff;
+    width: 32%;
+    left: 52%;
+    top: 62%;
+    font-size: 120%;
+    letter-spacing: .3rem;
+}
+.bullequestion{
+    position: absolute;
+    top: 52%;
+    left: 45%;
+    transform: rotateY(180deg);
+    height: 23%;
+    width: 35%;
+
+}
+
+.pdp{
+    position: relative;
+    left: -42%;
+    max-width: 20%;
+    margin-top: -3%;
+}
+.bulletext{
+    position: relative;
+    left: -44%;
+    margin-top: auto;
+    min-width: 60%;
+}
+
+.bulleecrit{
+    position: fixed;
+    top: 82.5%;
+    left: 27%;
+    height: 19%;
+    width: 45%;
+    z-index: 5;
+}
+.comecrit{
+    padding-top: 3%;
+    position: fixed;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    font-family: "p5hatty";
+    color: #ffffff;
+    width: 24%;
+    left: 38.1%;
+    top: 85.5%;
+    font-size: 155%;
+    letter-spacing: .03rem;
+    z-index: 5;
+
+}
+
+.container {
+    position: relative;
+    display: flex;
+    left: 0%;
+    margin-top:-7%;
+}
+
+.container1 {
+    position: relative;
+    display: flex;
+    left: 35%;
+    margin-top:-7%;
+}
+.container div {
+    margin-right: -100px;
+}
+.container1 div {
+    margin-right: -100px;
+}
+
+.conversation {
+    color: white;
+    margin-top: -20%;
+    margin-bottom: 47%;
+}
+.conv{
+    position: relative;
+    left: -15%;
+    margin-top: 35.5%;
+    margin-bottom:-35%;
+    margin-left: 40%;
+    font-size: 150%;
+    font-family: "p5hatty";
+}
+.message{
+    right: 11%;
+    top: -148px;
+    margin-top: 0%;
+    z-index: 2;
+    position: relative;
+}
+.nomutilisateur{
+    position: relative;
+    text-align: center;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    font-family: "p5hatty";
+    color: #ffffff;
+    width: 12%;
+    left: -37%;
+    top: -48px;
+    font-size: 125%;
+    letter-spacing: .3rem;
+}
+.blo{
+    width: 9%;
+    flex-grow: 1;
+}
+.pouceblo{
+    max-width: 19%;
+}
+.rouge{
+    width: 0%;
+    flex-grow: 2;
+}
+.poucerouge{
+    max-width: 20%;
+}
+.fucks{
+    width: 63%;
+    flex-grow: 3;
+}
+.fuck{
+    max-width: 4.3%;
+}
+.conv1 {
+    position: relative;
+    margin-top: 35.5%;
+    margin-bottom:-35%;
+    margin-left: 40%;
+    font-size: 150%;
+    font-family: "p5hatty";
+    /* float: right; */
+    right: 25%;
+    transform: rotateY(180deg); 
+    /* Ajoute une rotation sur l'axe horizontal */
+}
+
+.message1 {
+    right:70%;
+    top: -182px;
+    margin-top: 2%;
+    z-index: 2;
+    position: relative;
+    transform: rotateY(180deg); /* Inverse la rotation du message */
+}
+
+.nomutilisateur1{
+    position: relative;
+    text-align: center;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    font-family: "p5hatty";
+    color: #ffffff;
+    width: 12%;
+    left: -37%;
+    top: -60px;
+    font-size: 125%;
+    letter-spacing: .3rem;
+    margin-top: 1%;
+    transform: rotateY(180deg);
+}
+
+.blo1{
+    position: relative;
+    right: 30%;
+    width: 9%;
+    flex-grow: 1;
+    transform: rotateY(180deg);
+}
+.pouceblo1{
+    max-width: 19%;
+    transform: rotateY(180deg);
+}
+.rouge1{
+    position: relative;
+    right: 51%;
+    max-width: 21%;
+    flex-grow: 2;
+    transform: rotateY(180deg);
+}
+.poucerouge1{
+    max-width: 20%;
+    transform: rotateY(180deg);
+}
+.fucks1{
+    /* max-width: 180px; */
+    /* width: 63%; */
+    right: 140%;
+    position: relative;
+    flex-grow: 3;
+    transform: rotateY(180deg);
+}
+.fuck1{
+    max-width: 4.3%;
+    transform: rotateY(180deg);
+}

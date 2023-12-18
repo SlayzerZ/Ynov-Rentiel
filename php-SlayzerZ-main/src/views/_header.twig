@@ -1,0 +1,28 @@
+<head>
+    <link rel="stylesheet" href="../assets/css/Header.css">
+</head>
+<header>
+    <nav>
+    <a href="/home">
+        <div class="nav-item" id="first">
+                <img src="../assets/pictures/retro.jpg" class="pictures">
+                <h1 id="title">Bête de Caisse</h1>
+        </div>
+    </a>
+        <div class="nav-item" id="second" style="visibility: hidden;">
+                <img src="../assets/pictures/bangkok.jpg" class="search">
+            <form>
+                <input id="input-search" type="text" placeholder="Rechercher"/>
+            </form>
+        </div>
+        <div class="end-row">
+            <a href="/search" id="firsta">Trouvez une caisse</a>
+            <a href="/profil">Profil</a>
+            {% if co is null %}
+            <a href="/sign">Connexion</a>
+            {% else %}
+            <a href="/signout">Déconnexion</a>
+            {%endif%}
+        </div>
+    </nav>
+</header>
