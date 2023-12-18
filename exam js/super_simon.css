@@ -1,0 +1,94 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.gameContainer {
+    width: 800px;
+    height: 800px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border-radius: 500px; */
+    background: black;
+    color: white;
+}
+
+.eightButton{
+    display: flex;
+    align-self: start;
+    /* margin-top: 20em; */
+    width: 100px;
+    height: 200px;
+    cursor: pointer;
+}
+#button1{
+    margin-top: 1em;
+    margin-left: 0em;
+    /* border-radius: 13em 0 0 5em; */
+    background: #FAD3CC;
+    /* transform: rotate(20deg); */
+}
+#button2{
+    margin-top: 1em;
+    margin-left: 0em;
+    /* border-radius: 13em 0 0 5em; */
+    background: #55B308;
+    /* transform: rotate(-20deg); */
+}
+#button3{
+    margin-top: 1em;
+    margin-left: 0em;
+    /* border-radius: 13em 0 0 5em; */
+    background: #24E8FE;
+}
+#button4{
+    margin-top: 1em;
+    margin-left: 0em;
+    /* border-radius: 13em 0 0 5em; */
+    background: #FB3409;
+}
+#button5{
+    margin-top: 1em;
+    margin-left: 0em;
+    /* border-radius: 13em 0 0 5em; */
+    background: #C4E818;
+}
+#button6{
+    margin-top: 1em;
+    margin-left: 0em;
+    /* border-radius: 13em 0 0 5em; */
+    background: #7C519F;
+}
+#button7{
+    margin-top: 1em;
+    margin-left: 0em;
+    /* border-radius: 13em 0 0 5em; */
+    background: #B7AD0F;
+}
+#button8{
+    margin-top: 1em;
+    margin-left: 0em;
+    /* border-radius: 13em 0 0 5em; */
+    background: #7FE6BC;
+}
+.eightButton:hover {
+    background: #666;
+  }
+.eightButton:active {
+    /* background-color: #3e8e41; */
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+  }
+#center{
+    position: absolute;
+}
+.unclick{
+    pointer-events: none;
+}
+#CountBox{
+    background-color: red;
+    border-radius: 10px;
+    box-shadow: 0 15px;
+    text-align: center;
+}
